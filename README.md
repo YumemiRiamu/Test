@@ -92,3 +92,9 @@ BOOL CPenView::PreTranslateMessage(MSG* pMsg)
 		}
 	return CView::PreTranslateMessage(pMsg);
 ```
+실행 화면</br>
+
+![11](11.png)</br>
+![22](22.png)</br>
+![33](33.png)</br>
+![44](44.png)</br>
