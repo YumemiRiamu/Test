@@ -41,6 +41,27 @@ void CPenView::OnSize32()
 ```
 
 
+
+```
+//파일 저장 및 불러오기 기능
+#include "pch.h"
+#include "CLine.h"
+
+IMPLEMENT_SERIAL(CLine, CObject, 1)
+
+void CLine::Serialize(CArchive& ar)
+{
+	if (ar.IsStoring())
+	{	// storing code
+		ar << m_From << m_To << m_Size << m_Col;
+	}
+	else
+	{	// loading code
+		ar >> m_From >> m_To >> m_Size >> m_Col;
+	}
+}
+```
+
 ```
 //클래스 마법사로 PretranslateMessage 함수 추가 후 키보드 입력에 따라 펜의 굵기 변경
 BOOL CPenView::PreTranslateMessage(MSG* pMsg)
