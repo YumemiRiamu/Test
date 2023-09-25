@@ -63,6 +63,18 @@ void CLine::Serialize(CArchive& ar)
 ```
 
 ```
+//마우스 우클릭으로 컨텍스트 메뉴를 열어 색상/굵기 선택 기능
+void CPenView::OnContextMenu(CWnd* pWnd, CPoint point)
+{
+	CMenu m;
+	m.LoadMenu(IDR_MAINFRAME);
+	CMenu* p;
+	p = m.GetSubMenu(4);
+	p->TrackPopupMenu(TPM_RIGHTBUTTON, point.x, point.y, this);
+}
+```
+
+```
 //클래스 마법사로 PretranslateMessage 함수 추가 후 키보드 입력에 따라 펜의 굵기 변경
 BOOL CPenView::PreTranslateMessage(MSG* pMsg)
 {
